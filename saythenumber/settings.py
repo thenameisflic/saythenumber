@@ -28,6 +28,8 @@ SECRET_KEY = 'django-insecure-fjmyqs4cp5=7m=gtc&zrsx3zq%ea3yleah=h3wn9t0cc2j!wwt
 DEBUG = True
 
 ALLOWED_HOSTS = ["saythenumber.onrender.com"]
+if DEBUG:
+    ALLOWED_HOSTS += ["localhost"]
 
 
 # Application definition
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'saythenumber.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'frontend/dist'],
+        'DIRS': [BASE_DIR / 'staticfiles'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,7 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Where collectstatic puts files
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend/dist',  # Your Vue build output
+    BASE_DIR / 'staticfiles',
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
