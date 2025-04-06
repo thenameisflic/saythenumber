@@ -143,7 +143,7 @@ if DEBUG:
 RATELIMIT_VIEW = 'core.views.ratelimited_error'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://saythenumber.thenameisflic.com"
+    "https://saythenumber.onrender.com"
 ]
 
 if DEBUG:
