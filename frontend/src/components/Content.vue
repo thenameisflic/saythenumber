@@ -8,6 +8,7 @@
       <Button
         text="Say it now"
         @click="handleSayNow"
+        data-test="button-now"
         :loading="loading && disabled === 'say-with-delay'"
         :disabled="disabled === 'say-now'"
       />
@@ -15,6 +16,7 @@
         :loading="loading && disabled === 'say-now'"
         class="sm:ml-4"
         text="Say it with a delay"
+        data-test="button-delay"
         @click="handleSayWithDelay"
         :disabled="disabled === 'say-with-delay'"
       />
@@ -28,6 +30,9 @@
 
 <script>
 import axios from 'axios'
+import { getBaseUrl } from '@/utils.js'
+
+axios.defaults.baseURL = getBaseUrl()
 
 export default {
   data() {
@@ -117,7 +122,4 @@ export default {
 <script setup>
 import NumberInput from '@/components/NumberInput.vue'
 import Button from '@/components/Button.vue'
-import axios from 'axios'
-
-axios.defaults.baseURL = import.meta.env.VITE_API_URL
 </script>

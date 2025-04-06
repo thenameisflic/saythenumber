@@ -61,7 +61,7 @@ def test_frontend(request):
 
 
 def healthcheck(request):
-    return JsonResponse({'status': 'ok', 'message': "Say The Number is up and running! Head over to /test if you'd like to access the frontend, or try calling /num_to_english?number=123 directly."})
+    return render(request, 'core/index.html')
 
 
 def ratelimited_error(request, exception):

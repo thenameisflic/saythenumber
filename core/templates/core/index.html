@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <title>Say The Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #3e8582;
+        }
+        .endpoint {
+            background: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .example {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Say the Number API</h1>
+    <p>This service converts numbers into their English word equivalents.</p>
+
+    <h2>How to use:</h2>
+
+    <h3>1. API Endpoint</h3>
+    <p>Make GET or POST requests to:</p>
+    <div class="endpoint">/num_to_english?number=YOUR_NUMBER</div>
+
+    <p>Examples:</p>
+    <div class="endpoint example">/num_to_english?number=123</div>
+    <div class="endpoint example">/num_to_english?number=-45.67</div>
+
+    <h3>2. Web Interface</h3>
+    <p>For a more user-friendly experience, visit our web interface:</p>
+    <div class="endpoint"><a href="/test">/test</a></div>
+
+    <h3>Rate Limiting</h3>
+    <p>API requests are limited to 10 requests per minute per IP address.</p>
+</body>
+</html>
