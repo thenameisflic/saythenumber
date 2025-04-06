@@ -14,6 +14,7 @@ from django_ratelimit.decorators import ratelimit
 @require_http_methods(["GET", "POST"])
 @ratelimit(key='ip', rate='10/m')
 def num_to_english(request):
+    number = None
     """
     GET: /num_to_english?number=123
     POST: {"number": "123"}
@@ -24,7 +25,7 @@ def num_to_english(request):
         try:
             if request.content_type == 'application/json':
                 data = json.loads(request.body)
-                number = data.get('number')
+                number = str(data.get('number'))
         except json.JSONDecodeError:
             return JsonResponse({
                 "status": "error",

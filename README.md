@@ -68,6 +68,11 @@ For convenience (and to avoid needing a Node environment setup), this project in
 
 4. Head over to ```http://localhost:8000```.
 
+5. To run tests:
+```
+  python manage.py test
+```
+
 > If interested in building the frontend as well, you can follow the instructions at `frontend/README.md`.
 
 # API Documentation

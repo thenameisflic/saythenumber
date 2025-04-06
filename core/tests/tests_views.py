@@ -53,7 +53,8 @@ class NumToEnglishViewTests(TestCase):
     def test_post_valid_number(self):
         request = self.factory.post(
             '/num_to_english',
-            {'number': '123'}
+            {'number': '123'},
+            'application/json'
         )
         response = num_to_english(request)
 
@@ -69,7 +70,8 @@ class NumToEnglishViewTests(TestCase):
     def test_post_json_valid_number(self):
         request = self.factory.post(
             '/num_to_english',
-            data={"number": 123}
+            {"number": 123},
+            'application/json'
         )
         response = num_to_english(request)
 
@@ -98,7 +100,8 @@ class NumToEnglishViewTests(TestCase):
     def test_post_invalid_number_format(self):
         request = self.factory.post(
             '/num_to_english',
-            {'number': 'abc'}
+            {'number': 'abc'},
+            'application/json'
         )
         response = num_to_english(request)
 
