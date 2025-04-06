@@ -1,7 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
 }
 
@@ -10,7 +12,7 @@ html {
   color: var(--color-teal-900);
 }
 
-html[data-theme=dark] {
+html[data-theme='dark'] {
   background-color: var(--color-gray-900);
   color: var(--color-teal-50);
 }

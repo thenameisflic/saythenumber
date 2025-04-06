@@ -5,21 +5,21 @@
     :disabled="disabled"
   >
     <Spinner v-if="loading" />
-    <span v-else>{{text}}</span>
+    <span v-else>{{ text }}</span>
   </button>
 </template>
 
 <script setup>
-import Spinner from "@/components/Spinner.vue";
+import Spinner from '@/components/Spinner.vue'
 
-const props = defineProps({
+defineProps({
   text: {
     type: String,
-    required: true
+    required: true,
   },
   customClasses: {
     type: String,
-    default: ''
+    default: '',
   },
   loading: { type: Boolean, default: false },
   disabled: { type: Boolean, default: false },

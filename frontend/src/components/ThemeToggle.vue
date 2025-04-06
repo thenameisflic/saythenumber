@@ -4,7 +4,7 @@
     class="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 cursor-pointer"
     :class="{
       'bg-gray-200 hover:bg-gray-300 text-gray-800': !darkMode,
-      'bg-gray-700 hover:bg-gray-600 text-white': darkMode
+      'bg-gray-700 hover:bg-gray-600 text-white': darkMode,
     }"
     aria-label="Toggle dark mode"
   >
@@ -16,14 +16,14 @@
   </button>
 </template>
 <script setup>
-import { MoonIcon } from "@heroicons/vue/24/outline"
-import { SunIcon } from "@heroicons/vue/24/outline"
+import { MoonIcon } from '@heroicons/vue/24/outline'
+import { SunIcon } from '@heroicons/vue/24/outline'
 </script>
 <script>
 export default {
   data() {
     return {
-      darkMode: false
+      darkMode: false,
     }
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
         document.documentElement.removeAttribute('data-theme')
       }
       localStorage.setItem('darkMode', this.darkMode)
-    }
+    },
   },
   mounted() {
     const savedMode = localStorage.getItem('darkMode')
@@ -44,11 +44,10 @@ export default {
       if (this.darkMode) {
         document.documentElement.setAttribute('data-theme', 'dark')
       }
-    }
-    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       this.darkMode = true
       document.documentElement.setAttribute('data-theme', 'dark')
     }
-  }
+  },
 }
 </script>

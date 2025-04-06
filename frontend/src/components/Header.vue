@@ -1,5 +1,5 @@
 <script setup>
-import ThemeToggle from "@/components/ThemeToggle.vue";
+import ThemeToggle from '@/components/ThemeToggle.vue'
 </script>
 <template>
   <header class="bg-white dark:bg-gray-800 h-16 px-4 flex items-center justify-between">
