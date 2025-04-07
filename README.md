@@ -50,6 +50,8 @@ For front-end development:
 
 For convenience (and to avoid needing a Node environment setup), this project includes pre-built frontend files (in `staticfiles`).
 
+> This setup has been tested in Debian Linux 12.
+
 1. Create and activate a virtual environment:
 ```
     python -m venv venv
