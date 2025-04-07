@@ -19,6 +19,8 @@ A web application that converts numbers into their English word equivalents, bui
 - Responsive design works on all devices
 - Light/dark mode toggle
 - Rate-limited API (10 requests per minute)
+- Unit tests for backend and frontend.
+- E2E tests with Cypress.
 
 ## Tech Stack
 
