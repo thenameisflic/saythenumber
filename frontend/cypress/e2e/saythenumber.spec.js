@@ -1,4 +1,3 @@
-// frontend/cypress/e2e/saythenumber.cy.js
 describe('Say The Number Application', () => {
   beforeEach(() => {
     cy.visit('/')
@@ -19,9 +18,9 @@ describe('Say The Number Application', () => {
   })
 
   it('should filter non-numeric input', () => {
-  cy.get('input[type="tel"]').type('abc123.45-')
-  cy.get('input[type="tel"]').should('have.value', '-123.45')
-})
+    cy.get('input[type="tel"]').type('abc123.45-')
+    cy.get('input[type="tel"]').should('have.value', '-123.45')
+  })
 
   describe('"Say it now" button', () => {
     it('should be visible and enabled initially', () => {
@@ -65,15 +64,12 @@ describe('Say The Number Application', () => {
       cy.get('input[type="tel"]').type('42')
       cy.contains('button', 'Say it with a delay').click()
 
-      // Check loading state
       cy.get('[data-test="button-delay"]')
         .find('svg.animate-spin')
         .should('be.visible')
 
-      // Other button should be disabled during loading
       cy.get('[data-test="button-now"]').should('be.disabled')
 
-      // Eventually show result
       cy.contains('forty two', { timeout: 6000 }).should('be.visible')
     })
   })
@@ -109,23 +105,18 @@ describe('Say The Number Application', () => {
     })
 
     it('should switch between light and dark mode', () => {
-      // Initial state - light mode
       cy.get('html').should('not.have.attr', 'data-theme', 'dark')
 
-      // Click to toggle to dark mode
       cy.get('[aria-label="Toggle dark mode"]').click()
       cy.get('html').should('have.attr', 'data-theme', 'dark')
 
-      // Click again to toggle back to light mode
       cy.get('[aria-label="Toggle dark mode"]').click()
       cy.get('html').should('not.have.attr', 'data-theme', 'dark')
     })
 
     it('should persist theme preference', () => {
-      // Set to dark mode
       cy.get('[aria-label="Toggle dark mode"]').click()
 
-      // Reload page and verify theme persists
       cy.reload()
       cy.get('html').should('have.attr', 'data-theme', 'dark')
     })
